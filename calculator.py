@@ -52,7 +52,7 @@ class CalcServerHandler(http.server.BaseHTTPRequestHandler):
       elif parsed_json['operator'] == '/':
         result = int(parsed_json['operand1']) / int(parsed_json['operand2'])
 
-      result_text = json.dumps({'result': result}) + "\n"
+      result_text = json.dumps({'ANSWER': result}) + "\n"
       self.send_response(200)
       self.send_header('Content-type', 'application/json')
       self.end_headers()
